@@ -42,6 +42,7 @@ int main(){
 		}
 	}
 
+	
 	cout << best_dist << endl;
 
 

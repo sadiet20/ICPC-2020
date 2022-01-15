@@ -11,6 +11,7 @@ using namespace std;
 
 
 int main(){
+	//get input
 	int num_people;
 	cin >> num_people;
 
@@ -20,6 +21,8 @@ int main(){
 	}
 
 	unsigned long long count = 0;
+
+	//forward pass counting all left < right
 	stack<int> forward_stack;
 	forward_stack.push(people[0]);
 	for(int i=1; i<num_people; i++){
@@ -30,6 +33,7 @@ int main(){
 		forward_stack.push(people[i]);
 	}
 	
+	//backward pass counting all right < left
 	stack<int> backward_stack;
 	backward_stack.push(people[num_people-1]);
 	for(int i=num_people-2; i>=0; i--){
@@ -39,6 +43,7 @@ int main(){
 		}
 		backward_stack.push(people[i]);
 	}
+
 
 	cout << count << endl;
 
